@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset ="utf-8"/>
+<meta name  ="viewport" content = "width=device-width,initial-scale=1,0"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</head>
+<body class = "lead">
+	<div class = "py-5">
+			<div class = "row">
+				<div class = "col-lg-4 mx-auto container">
+					<div class = "alert alert-success " th:if="${msg}" th:text="${msg}"></div>
+					<div class = "alert alert-danger" th:if="${emsg}" th:text="${emsg}"></div>
+				
+					<form th:action="@{/signup}" method = "POST" th:object="${users}" class= "py-2 container">
+	
+					<span class=  "display-4">Registration</span><br>
+						<div class = "form-group d-flex flex-column">
+						<span th:if="${#fields.hasErrors('firstName')}" th:error="*{firstName}" class = "text-danger"> * Firstname Required</span>
+						<span class = "mx-1"></span>
+						<span th:if="${#fields.hasErrors('lastName')}" th:error="*{lastName}" class = "text-danger"> * Lastname Required</span>
+						</div>
+						<div class = "form-group d-flex mt-2" >
+						<input type = "text" class= "form-control form-control-sm" th:field="*{firstName}" placeholder = "Firstname"/> 
+						<span class = "mx-1"></span>
+						<input type = "text" class = "form-control form-control-sm" th:field="*{lastName}" placeholder = "Lastname"/> 
+						</div>
+						<div class = "form-group">
+						<input type = "email" name = "email" class= "form-control form-control-sm" th:field="*{email}" placeholder="Email"/>
+						</div>
+						<div class = "form-group">
+						<input type = "password" name = "password" class = "form-control form-control-sm" th:field="*{password}" placeholder="Password"/>
+						</div>
+						<div class = "form-group">
+						<input type = "submit" value = "Save" class = "btn btn-primary"/>
+						<a th:href="@{/}" class = "btn btn-primary">Back</a>
+						</div>
+						
+						
+					
+					</form>
+				
+				</div>
+		</div>
+	</div>
+</body>
+</html>

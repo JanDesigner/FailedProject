@@ -1,0 +1,23 @@
+.bg{
+	
+	background-image: url("../img/background.jpeg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width:100%;
+	height:100%;
+	
+	
+	
+}
+.overlay-bg{
+	padding: 50px 0  50px  0;
+
+}
+.forms {
+	background-color:rgba(0,0,0,0.4);
+	border-radius: 10px;
+}
+.sectionA {
+	background-color:rgb(190,144,212);
+}

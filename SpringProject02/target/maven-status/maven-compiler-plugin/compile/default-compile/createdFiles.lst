@@ -1,0 +1,14 @@
+com\springboot\configuration\JavaWebMvcConfiguration.class
+com\springboot\model\Customer.class
+com\springboot\service\UserServiceImpl.class
+com\springboot\SpringProject02Application.class
+com\springboot\model\User.class
+com\springboot\repository\CustomerRepository.class
+com\springboot\service\CustomerServiceImpl.class
+com\springboot\controller\JavaWebController.class
+com\springboot\service\UserService.class
+com\springboot\repository\UserRepository.class
+com\springboot\configuration\JavaWebSecurityConfiguration.class
+com\springboot\service\CustomerService.class
+com\springboot\repository\RoleRepository.class
+com\springboot\model\Role.class
